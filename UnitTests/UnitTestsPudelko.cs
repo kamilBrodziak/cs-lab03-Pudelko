@@ -447,7 +447,24 @@ namespace PudelkoUnitTests
 
 
         #region Pole, Objętość ===================================
-        // ToDo
+
+        [DataTestMethod]
+        [DataRow(9.5, 3.1, 2.5, 73.625)]
+        [DataRow(2.4, 1.1, 1.5, 3.96)]
+        [DataRow(7.1, 2.4, 8.8, 149.952)]
+        public void Volume_Equals(double a, double b, double c, double expected) {
+            Pudelko p = new Pudelko(a, b, c);
+            Assert.AreEqual(expected, p.Objetosc);
+        }
+
+        [DataTestMethod]
+        [DataRow(9.5, 3.1, 2.5, 121.9)]
+        [DataRow(2.4, 1.1, 1.5, 15.78)]
+        [DataRow(7.1, 2.4, 8.8, 201.28)]
+        public void Surface_Area_Equals(double a, double b, double c, double expected) {
+            Pudelko p = new Pudelko(a, b, c);
+            Assert.AreEqual(expected, p.Pole);
+        }
 
         #endregion
 
